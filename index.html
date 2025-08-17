@@ -1,233 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>German Ramirez Cortinas</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<style>
-/* RESET */
-*{margin:0; padding:0; box-sizing:border-box;}
-body{font-family:'Montserrat', sans-serif; background:#f8f8ff; color:#222; overflow-x:hidden;}
-a{text-decoration:none; color:inherit;}
-section{padding:80px 10%;}
-
-/* COLORES VIOLETA TENDENCIA 2025 */
-:root{
-  --primary:#6a0dad; /* violeta intenso */
-  --secondary:#c8a2c8; /* lila */
-  --accent:#d8b4ff; /* pastel */
-  --light:#f8f8ff; /* fondo claro */
-  --dark:#222; /* texto oscuro */
-}
-
-/* BOTONES FLOTANTES */
-.floating-btn{position:fixed; bottom:20px; right:20px; z-index:1000; border-radius:50%; width:60px; height:60px; display:flex; justify-content:center; align-items:center; font-size:1.5rem; color:#fff; cursor:pointer; box-shadow:0 5px 15px rgba(0,0,0,0.3);}
-.floating-whatsapp{background:#25d366; right:90px;}
-.floating-call{background:#ff4b5c;}
-
-/* HEADER */
-header{position:relative; width:100%; height:90vh; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden;}
-header video{position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-2; filter:brightness(0.5);}
-.particles{position:absolute; width:100%; height:100%; pointer-events:none; overflow:hidden; z-index:-1;}
-.particle{position:absolute; width:5px; height:5px; background:var(--accent); border-radius:50%; opacity:0.7; animation:float 6s linear infinite;}
-@keyframes float{0%{transform:translateY(100vh) translateX(0);}100%{transform:translateY(-10vh) translateX(50px);}}
-
-/* LOGO Y MENU */
-header .logo{font-size:3rem; color:var(--primary); text-shadow:2px 2px 15px rgba(0,0,0,0.4); font-family:'Playfair Display', serif;}
-header .logo span{color:var(--secondary);}
-nav.main-nav{margin-top:20px; display:flex; gap:15px; flex-wrap:wrap; justify-content:center; z-index:10;}
-nav.main-nav a{padding:10px 15px; font-weight:600; border-radius:10px; transition:0.3s; color:var(--light);}
-nav.main-nav a:hover{background:var(--secondary); color:var(--primary);}
-
-/* SALA 3D + CORTINA */
-.sala-container{position:relative; width:80%; max-width:1200px; height:60vh; margin:50px auto; border-radius:20px; overflow:hidden; transform-style:preserve-3d; box-shadow:0 20px 50px rgba(0,0,0,0.2);}
-.sala-bg{position:absolute; width:100%; height:100%; background:url('https://images.unsplash.com/photo-1588854337111-3d9b1df7e214?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat; transition:transform 1s ease;}
-.cortina{position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(to right, var(--primary) 0%, var(--primary) 50%, transparent 50%); transform:translateX(-100%); z-index:2; transition:transform 1.5s ease; box-shadow: inset -5px 0 15px rgba(0,0,0,0.4);}
-.cortina.open{transform:translateX(0);}
-
-/* SECCIONES CORTINAS */
-.cortinas-section{display:grid; grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:50px; align-items:center; margin-bottom:50px;}
-.cortinas-section h2{font-size:2.5rem; color:var(--primary); margin-bottom:20px; font-family:'Playfair Display', serif;}
-.cortinas-section p{font-size:1.1rem; line-height:1.8; margin-bottom:20px; color:#333;}
-.cta-buttons a{margin-right:20px; background:var(--secondary); color:var(--primary); padding:12px 25px; border-radius:12px; font-weight:600; transition:transform 0.3s;}
-.cta-buttons a:hover{transform:scale(1.05);}
-.cortinas-image img{width:100%; height:100%; object-fit:cover; border-radius:20px; transition:transform 0.5s;}
-.cortinas-image img:hover{transform:scale(1.05);}
-
-/* TECH / AI */
-.tech-section{background:var(--light); text-align:center; padding:80px 10%;}
-.tech-section h2{font-size:2.5rem; color:var(--primary); margin-bottom:30px; font-family:'Playfair Display', serif;}
-.tech-grid{display:flex; justify-content:center; gap:50px; flex-wrap:wrap;}
-.tech-item{flex:1 1 250px; background:#fff; border-radius:15px; padding:30px; box-shadow:0 10px 30px rgba(0,0,0,0.1); transition:transform 0.3s;}
-.tech-item:hover{transform:translateY(-10px);}
-.tech-item i{font-size:2.5rem; color:var(--accent); margin-bottom:15px;}
-.tech-item h3{margin-bottom:15px; color:var(--primary);}
-.tech-item p{font-size:1rem; line-height:1.5;}
-
-/* CARDS */
-.category-card{position:relative; overflow:hidden; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.1); cursor:pointer; transition:transform 0.5s ease, box-shadow 0.5s ease; opacity:0; transform:translateY(50px) rotateX(15deg);}
-.category-card.visible{opacity:1; transform:translateY(0) rotateX(0);}
-.category-card img{width:100%; height:200px; object-fit:cover; display:block; transition:transform 0.5s ease;}
-.category-card:hover img{transform:scale(1.1);}
-.category-card h3{position:absolute; bottom:15px; left:15px; color:var(--secondary); text-shadow:1px 1px 5px rgba(0,0,0,0.5); font-size:1.3rem;}
-
-/* FOOTER */
-footer{background:var(--primary); color:var(--light); padding:50px 10%; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;}
-footer h4{margin-bottom:15px;}
-footer a{color:var(--light);}
-footer .socials a{margin-right:15px; font-size:1.5rem;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Ramirez Cortinas</title>
+    <meta name="description" content="Cortinas y persianas de alta calidad con tecnología de automatización para hogares y oficinas.">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&display=swap"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-<!-- BOTONES FLOTANTES -->
-<a href="https://wa.me/506XXXXXXXX" class="floating-btn floating-whatsapp"><i class="fab fa-whatsapp"></i></a>
-<a href="tel:+506XXXXXXXX" class="floating-btn floating-call"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/506XXXXXXXX" class="floating-btn floating-whatsapp" aria-label="Escríbenos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+506XXXXXXXX" class="floating-btn floating-call" aria-label="Llámanos por teléfono"><i class="fas fa-phone"></i></a>
 
-<!-- HEADER -->
-<header>
-  <video autoplay muted loop>
-    <source src="video-de-fondo.mp4" type="video/mp4">
-  </video>
-  <div class="particles" id="particles"></div>
-  <div class="logo">German Ramirez <span>Cortinas</span></div>
-  <nav class="main-nav">
-    <a href="#">NUEVO</a>
-    <a href="#">TOLDO ZIPRO</a>
-    <a href="#">PERSIANAS</a>
-    <a href="#">CORTINAS</a>
-    <a href="#">EXTERIORES</a>
-    <a href="#">PÉRGOLAS ZEN</a>
-    <a href="#">TOLDOS</a>
-    <a href="#">ALFOMBRAS</a>
-    <a href="#">CONTACTO</a>
-  </nav>
-</header>
+    <header>
+        <video autoplay muted loop playsinline poster="video-poster.jpg" id="bgVideo">
+            <source src="video-de-fondo.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+        <div class="particles" id="particles"></div>
+        <div class="content-wrapper">
+            <div class="logo">German Ramirez <span>Cortinas</span></div>
+            <nav class="main-nav">
+                <a href="#productos">Productos</a>
+                <a href="#automatizacion">Automatización</a>
+                <a href="#contacto">Contacto</a>
+                </nav>
+        </div>
+    </header>
 
-<!-- SALA 3D + CORTINA BLACKOUT -->
-<section class="sala-container" id="sala">
-  <div class="sala-bg" id="sala-bg"></div>
-  <div class="cortina" id="cortina"></div>
-</section>
+    <main>
+        <section class="sala-container" id="sala">
+            <div class="sala-bg" id="sala-bg"></div>
+            <div class="cortina" id="cortina"></div>
+        </section>
 
-<!-- SECCIÓN CORTINAS -->
-<section class="cortinas-section">
-  <div class="cortinas-text">
-    <h2>CORTINAS</h2>
-    <p>Lo clásico siempre está de moda. Los textiles de German Ramirez Cortinas realzan la belleza de su hogar u oficina, controlando la luz según cada necesidad.</p>
-    <div class="cta-buttons">
-      <a href="#">HOGAR</a>
-      <a href="#">COMERCIAL</a>
-    </div>
-  </div>
-  <div class="cortinas-image">
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Cortinas">
-  </div>
-</section>
+        <section class="products-section" id="productos">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <div class="product-grid">
+                <article class="product-item">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Cortinas de tela" loading="lazy">
+                    <div class="product-info">
+                        <h3>Cortinas</h3>
+                        <p>Los textiles de alta calidad realzan la belleza de cualquier espacio, controlando la luz y ofreciendo elegancia.</p>
+                        <a href="#" class="cta-button">Ver más</a>
+                    </div>
+                </article>
+                <article class="product-item">
+                    <img src="https://images.unsplash.com/photo-1600880292091-6e9ed32a76c0?auto=format&fit=crop&w=800&q=80" alt="Cortinas Blackout" loading="lazy">
+                    <div class="product-info">
+                        <h3>Blackout</h3>
+                        <p>Total control de la luz y máxima privacidad, ideal para dormitorios y salas de proyección.</p>
+                        <a href="#" class="cta-button">Ver texturas</a>
+                    </div>
+                </article>
+                <article class="product-item">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Persianas" loading="lazy">
+                    <div class="product-info">
+                        <h3>Persianas</h3>
+                        <p>La opción perfecta para un control preciso de la luz. Estilo, funcionalidad y modernidad.</p>
+                        <a href="#" class="cta-button">Ver colección</a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-<!-- BLACKOUT -->
-<section class="cortinas-section">
-  <div class="cortinas-text">
-    <h2>CORTINAS BLACKOUT</h2>
-    <p>El medio día parece media noche con German Ramirez Cortinas. Control total de la luz y privacidad.</p>
-    <div class="cta-buttons">
-      <a href="#">Ver texturas</a>
-      <a href="#">Solicite su visita gratuita</a>
-    </div>
-    <ul>
-      <li><i class="fas fa-ruler-combined"></i> Medidas personalizadas</li>
-      <li><i class="fas fa-tv"></i> Automatización opcional</li>
-    </ul>
-  </div>
-  <div class="cortinas-image">
-    <img src="https://images.unsplash.com/photo-1600880292091-6e9ed32a76c0?auto=format&fit=crop&w=800&q=80" alt="Blackout">
-  </div>
-</section>
+        <section class="tech-section" id="automatizacion">
+            <h2>AUTOMATIZACIÓN</h2>
+            <p>Transforma tu hogar con tecnología de punta. Controla tus cortinas, persianas y toldos con un solo clic o con tu voz.</p>
+            <div class="tech-grid">
+                <div class="tech-item"><i class="fas fa-mobile-alt"></i><h3>Control por App</h3><p>Maneja todo desde tu celular, estés donde estés.</p></div>
+                <div class="tech-item"><i class="fas fa-bolt"></i><h3>Integración Smart</h3><p>Compatibles con Google Home y Alexa para control por voz.</p></div>
+                <div class="tech-item"><i class="fas fa-tv"></i><h3>Control Remoto</h3><p>La comodidad de un control dedicado para un manejo fácil.</p></div>
+            </div>
+        </section>
+        
+        <section class="contact-section" id="contacto">
+            <h2>Agenda tu visita</h2>
+            <p>Recibe una asesoría personalizada y gratuita en tu hogar u oficina para encontrar la solución perfecta.</p>
+            <a href="#" class="cta-button primary-cta">¡Solicita tu visita!</a>
+        </section>
+    </main>
 
-<!-- AI / AUTOMATIZACIÓN -->
-<section class="tech-section">
-  <h2>AUTOMATIZACIÓN DE CORTINAS Y PERSIANAS</h2>
-  <p>Controle cortinas, persianas, arrollables y toldos con un clic o comandos de voz. Compatible con Google Home y Alexa.</p>
-  <div class="tech-grid">
-    <div class="tech-item"><i class="fas fa-mobile-alt"></i><h3>Aplicación móvil</h3><p>Controle desde su celular sin esfuerzo.</p></div>
-    <div class="tech-item"><i class="fas fa-bolt"></i><h3>Sistemas inteligentes</h3><p>Compatibles con Google Home y Alexa.</p></div>
-    <div class="tech-item"><i class="fas fa-tv"></i><h3>Control remoto</h3><p>Opciones manuales para máxima comodidad.</p></div>
-  </div>
-</section>
+    <footer>
+        <div class="footer-col">
+            <h4>German Ramirez Cortinas</h4>
+            <p>Liderando en cortinas y automatización con diseño y tecnología de vanguardia.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Productos</h4>
+            <ul>
+                <li><a href="#">Cortinas</a></li>
+                <li><a href="#">Persianas</a></li>
+                <li><a href="#">Blackout</a></li>
+                <li><a href="#">Toldos y Pérgolas</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <p><i class="fas fa-map-marker-alt"></i> San José, Costa Rica</p>
+            <p><i class="fas fa-phone"></i> +506 XXXXXXXX</p>
+            <p><i class="fas fa-envelope"></i> info@germinramirez.com</p>
+        </div>
+        <div class="footer-col socials-col">
+            <h4>Nuestras Marcas</h4>
+            <div class="socials">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 German Ramirez Cortinas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-<!-- CATEGORÍAS -->
-<section class="categories">
-  <div class="category-card"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Hogar"><h3>Hogar</h3></div>
-  <div class="category-card"><img src="https://images.unsplash.com/photo-1600880292091-6e9ed32a76c0?auto=format&fit=crop&w=800&q=80" alt="Comercial"><h3>Comercial</h3></div>
-</section>
+    <audio id="sound" src="cortina-bajar.mp3" preload="auto"></audio>
 
-<!-- FOOTER -->
-<footer>
-  <div>
-    <h4>UBICACIÓN</h4>
-    <p>San José, Costa Rica</p>
-  </div>
-  <div>
-    <h4>COTIZACIONES</h4>
-    <p>Solicite su presupuesto gratuito</p>
-  </div>
-  <div>
-    <h4>CONTACTO</h4>
-    <p>Escríbanos por WhatsApp o correo</p>
-  </div>
-  <div class="socials">
-    <h4>Nuestras marcas</h4>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-pinterest"></i></a>
-  </div>
-</footer>
-
-<audio id="sound" src="cortina-bajar.mp3" preload="auto"></audio>
-
-<script>
-// Partículas header
-const particlesContainer = document.getElementById('particles');
-for(let i=0;i<70;i++){
-  let p = document.createElement('div');
-  p.classList.add('particle');
-  p.style.left = Math.random()*100 + 'vw';
-  p.style.animationDuration = (3+Math.random()*5) + 's';
-  particlesContainer.appendChild(p);
-}
-
-// Cortina 3D interactiva
-const cortina = document.getElementById('cortina');
-const sound = document.getElementById('sound');
-const sala = document.getElementById('sala-bg');
-
-document.addEventListener('mousemove', e => {
-  const x = (e.clientX/window.innerWidth - 0.5)*30;
-  const y = (e.clientY/window.innerHeight - 0.5)*20;
-  sala.style.transform = `rotateY(${x}deg) rotateX(${-y}deg) scale(1.05)`;
-});
-
-// Scroll cortina + sonido
-window.addEventListener('scroll', () => {
-  const trigger = window.innerHeight/2;
-  if(window.scrollY > trigger && !cortina.classList.contains('open')){
-    cortina.classList.add('open');
-    sound.play();
-  }
-});
-
-// Scroll animación categorías
-const cards = document.querySelectorAll('.category-card');
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-    }
-  });
-},{threshold:0.3});
-cards.forEach(card=>observer.observe(card));
-</script>
+    <script src="scripts.js"></script>
 </body>
 </html>
