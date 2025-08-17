@@ -6,14 +6,15 @@ a{text-decoration:none;color:inherit}
 section{padding:80px 10%;}
 
 :root {
-    --color-fondo: #F5EFE8;       /* Fondo claro estilo museográfico */
-    --color-texto: #3B2F2F;       /* Marrón oscuro elegante */
-    --color-acento: #8B5E3C;      /* Chocolate intenso */
-    --color-acento-hover: #5C3A21;/* Chocolate oscuro hover */
-    --color-gris-claro: #E2D9D0;  /* Para fondos de secciones */
-    --color-gris-medio: #C1B7AD;  /* Texto secundario */
-    --color-negro-puro: #000000;
+    --color-fondo: #F9F7FB;          /* Fondo lavanda muy claro elegante */
+    --color-texto: #2A2438;          /* Morado grisáceo oscuro para texto */
+    --color-acento: #6A0DAD;         /* Morado elegante (púrpura intenso) */
+    --color-acento-hover: #520C8D;   /* Morado profundo para hover */
+    --color-gris-claro: #E6E1EC;     /* Gris lavanda claro para secciones */
+    --color-gris-medio: #A59BB2;     /* Gris púrpura para texto secundario */
+    --color-negro-puro: #000000;     /* Negro para contraste máximo */
 }
+
 
 /* BOTONES FLOTANTES */
 .floating-btn{position:fixed;bottom:20px;z-index:1000;border-radius:50%;width:60px;height:60px;display:flex;justify-content:center;align-items:center;font-size:1.5rem;color:#fff;cursor:pointer;box-shadow:0 5px 15px rgba(0,0,0,0.3);transition:transform .3s}
