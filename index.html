@@ -1,1 +1,635 @@
-index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Ramirez Cortinas | Elegancia y Diseño en Costa Rica</title>
+    <meta name="description" content="German Ramirez Cortinas ofrece fabricación, reparación y mantenimiento de cortinas de lujo en Costa Rica. Descubre nuestros diseños exclusivos al estilo Hunter Douglas y Apple.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Paleta de colores de tendencia 2025 */
+            --color-mocha-mousse: #a87d6e;
+            --color-butter-yellow: #f5e6a9;
+            --color-aqua-green: #9ed2c6;
+            --color-soft-pink: #f4c2c2;
+            --color-burnt-orange: #e76f51;
+            --color-silver: #c0c0c0;
+            --color-lime-green: #d1f737;
+            --color-ice-blue: #a3e2ff;
+            --color-chocolate: #4a2c2a;
+            --color-royal-purple: #7a3e60;
+
+            /* Colores base para la marca German Ramirez Cortinas */
+            --color-primary: var(--color-mocha-mousse);
+            --color-secondary: var(--color-silver);
+            --color-accent: var(--color-burnt-orange);
+            --color-text-dark: var(--color-chocolate);
+            --color-text-light: #fff;
+            --color-background-light: #f8f8f8;
+            --color-background-dark: #222;
+
+            /* Tipografía */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Roboto', sans-serif;
+
+            /* Transiciones y animaciones */
+            --transition-speed: 0.5s;
+            --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            background-color: var(--color-background-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-text-light);
+            letter-spacing: 2px;
+            text-shadow: var(--shadow-subtle);
+            text-decoration: none;
+        }
+
+        .btn {
+            padding: 0.8rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all var(--transition-speed) ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .btn-primary:hover {
+            background-color: #7a5d51; /* Mocha más oscuro */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-text-light);
+            border: 2px solid var(--color-text-light);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--color-text-light);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes blackoutEffect {
+            0% { background-color: rgba(0, 0, 0, 0); }
+            100% { background-color: rgba(0, 0, 0, 0.6); }
+        }
+
+        .blackout-effect {
+            animation: blackoutEffect 1.5s forwards;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            color: var(--color-text-dark);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .brand-name {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 2.5rem;
+            }
+            .btn {
+                padding: 0.6rem 2rem;
+            }
+        }
+        
+        /* Estilos del Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: transparent;
+            padding: 1.5rem 0;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .header .nav a {
+            text-decoration: none;
+            color: var(--color-text-light);
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .header .nav a:hover {
+            color: var(--color-primary);
+        }
+        
+        .header .social-icons {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .header .social-icons a {
+            color: var(--color-text-light);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .header .social-icons a:hover {
+            color: var(--color-primary);
+        }
+        
+        @media (max-width: 768px) {
+            .header .nav,
+            .header .social-icons {
+                display: none;
+            }
+            .header-container {
+                justify-content: center;
+            }
+        }
+        
+        /* Estilos del HeroSection */
+        .hero-section {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--color-text-light);
+            overflow: hidden;
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            transition: background-color 1.5s ease-in-out;
+        }
+        
+        .overlay.blackout-effect {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-in-out 1s, transform 1s ease-in-out 1s;
+        }
+        
+        .hero-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .main-title {
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            color: var(--color-primary);
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            color: var(--color-silver);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 3rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Estilos de Categories */
+        .categories-section {
+            background-color: var(--color-background-light);
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+        
+        .category-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .category-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .category-card:hover .category-image {
+            transform: scale(1.05);
+        }
+        
+        .card-content {
+            padding: 2rem 1.5rem;
+        }
+        
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-dark);
+        }
+        
+        .card-content p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-link {
+            display: inline-block;
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .card-link:hover {
+            color: var(--color-accent);
+        }
+
+        /* Estilos del Footer */
+        .footer {
+            background-color: var(--color-background-dark);
+            color: var(--color-text-light);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-brand {
+            flex-basis: 300px;
+        }
+        
+        .footer-brand .brand-name {
+            color: var(--color-text-light);
+            font-size: 2rem;
+        }
+        
+        .footer-brand p {
+            color: var(--color-silver);
+            font-weight: 300;
+        }
+        
+        .footer-links, .footer-contact {
+            flex-basis: 200px;
+        }
+        
+        .footer-links h4, .footer-contact h4 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links a, .footer-contact p {
+            color: var(--color-silver);
+            text-decoration: none;
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--color-text-light);
+        }
+        
+        .footer-contact .social-icons {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-contact .social-icons a {
+            color: var(--color-silver);
+            font-size: 1.5rem;
+        }
+        
+        .footer-contact .social-icons a:hover {
+            color: var(--color-text-light);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            color: var(--color-silver);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-links ul {
+                display: none;
+            }
+            .footer-contact .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <header class="header">
+            <div class="container header-container">
+                <div class="logo-container">
+                    <a href="#inicio">
+                        <span class="brand-name">German Ramirez Cortinas</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#automatizacion">Automatización</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="social-icons">
+                    <a href="https://wa.me/50664573846" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.facebook.com/persianascanetcr/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/persianas_canet/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <section id="inicio" class="hero-section">
+            <div class="video-background">
+                <video id="hero-video" autoplay muted loop playsinline>
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-curtain-in-a-room-3084-large.mp4" type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+            </div>
+            <div id="hero-overlay" class="overlay"></div>
+            <div id="hero-content" class="hero-content">
+                <h1 class="main-title">German Ramirez Cortinas</h1>
+                <h2 class="subtitle">Llevamos el diseño, la elegancia y la tecnología a tus espacios.</h2>
+                <div class="cta-buttons">
+                    <a href="#contacto" class="btn btn-primary">Solicitar Cotización</a>
+                    <a href="#productos" class="btn btn-secondary">Explorar Colección</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="productos" class="section categories-section">
+            <div class="container">
+                <h2 class="section-title animate-fade-in">Nuestra Colección de Lujo</h2>
+                <div class="categories-grid">
+                    <div class="category-card animate-fade-in" style="animation-delay: 0.5s;">
+                        <img src="https://i.ibb.co/3s6q3Yx/cortina-romana.jpg" alt="Cortinas Romanas" class="category-image">
+                        <div class="card-content">
+                            <h3>Cortinas Romanas</h3>
+                            <p>La fusión perfecta de estilo y funcionalidad para tus espacios.</p>
+                            <a href="#romanas" class="card-link">Ver más →</a>
+                        </div>
+                    </div>
+                    <div class="category-card animate-fade-in" style="animation-delay: 0.7s;">
+                        <img src="https://i.ibb.co/v4yJ4Vf/cortina-blackout.jpg" alt="Cortinas Blackout" class="category-image">
+                        <div class="card-content">
+                            <h3>Cortinas Blackout</h3>
+                            <p>Controla la luz y la privacidad con nuestra colección blackout.</p>
+                            <a href="#blackout" class="card-link">Ver más →</a>
+                        </div>
+                    </div>
+                    <div class="category-card animate-fade-in" style="animation-delay: 0.9s;">
+                        <img src="https://i.ibb.co/L89tXgK/cortina-lino.jpg" alt="Cortinas de Lino" class="category-image">
+                        <div class="card-content">
+                            <h3>Cortinas de Lino</h3>
+                            <p>Textiles naturales que aportan calidez y sofisticación.</p>
+                            <a href="#lino" class="card-link">Ver más →</a>
+                        </div>
+                    </div>
+                    <div class="category-card animate-fade-in" style="animation-delay: 1.1s;">
+                        <img src="https://i.ibb.co/D8d3r31/cortina-motorizada.jpg" alt="Cortinas Motorizadas" class="category-image">
+                        <div class="card-content">
+                            <h3>Cortinas Motorizadas</h3>
+                            <p>La última tecnología a tu alcance, controla tus cortinas con un clic.</p>
+                            <a href="#motorizadas" class="card-link">Ver más →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contacto" class="footer">
+            <div class="container footer-container">
+                <div class="footer-brand">
+                    <span class="brand-name">German Ramirez Cortinas</span>
+                    <p>Elegancia y calidad en cada detalle.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#">Fabricación</a></li>
+                        <li><a href="#">Reparación</a></li>
+                        <li><a href="#">Mantenimiento</a></li>
+                        <li><a href="#">Automatización</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>Teléfono: +506 2280-XXXX</p>
+                    <p>Email: info@germanramirez.com</p>
+                    <p>Ubicación: San José, Costa Rica</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/50664573846" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.facebook.com/persianascanetcr/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/persianas_canet/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 German Ramirez Cortinas. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const heroOverlay = document.getElementById('hero-overlay');
+            const heroContent = document.getElementById('hero-content');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const animateOnScroll = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            // Iniciar animación del hero section
+            setTimeout(() => {
+                heroOverlay.classList.add('blackout-effect');
+                heroContent.classList.add('visible');
+            }, 1500);
+
+            // Observador para animaciones de fade-in en otras secciones
+            const elementsToAnimate = document.querySelectorAll('.animate-fade-in');
+            const observer = new IntersectionObserver(animateOnScroll, observerOptions);
+
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
