@@ -4,22 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>German Ramirez Cortinas</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 /* RESET */
 *{margin:0; padding:0; box-sizing:border-box;}
-body{font-family:'Playfair Display', serif; background:#f5f0eb; color:#222; overflow-x:hidden;}
+body{font-family:'Montserrat', sans-serif; background:#f8f8ff; color:#222; overflow-x:hidden;}
 a{text-decoration:none; color:inherit;}
 section{padding:80px 10%;}
 
-/* COLORES DE TENDENCIA 2025 */
+/* COLORES VIOLETA TENDENCIA 2025 */
 :root{
-  --primary:#5c3a21;
-  --secondary:#f8e49e;
-  --accent:#a3d2ca;
-  --light:#f8f8f8;
-  --dark:#222;
+  --primary:#6a0dad; /* violeta intenso */
+  --secondary:#c8a2c8; /* lila */
+  --accent:#d8b4ff; /* pastel */
+  --light:#f8f8ff; /* fondo claro */
+  --dark:#222; /* texto oscuro */
 }
 
 /* BOTONES FLOTANTES */
@@ -29,16 +29,16 @@ section{padding:80px 10%;}
 
 /* HEADER */
 header{position:relative; width:100%; height:90vh; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden;}
-header video{position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-2; filter:brightness(0.6);}
+header video{position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-2; filter:brightness(0.5);}
 .particles{position:absolute; width:100%; height:100%; pointer-events:none; overflow:hidden; z-index:-1;}
-.particle{position:absolute; width:5px; height:5px; background:var(--secondary); border-radius:50%; opacity:0.7; animation:float 6s linear infinite;}
+.particle{position:absolute; width:5px; height:5px; background:var(--accent); border-radius:50%; opacity:0.7; animation:float 6s linear infinite;}
 @keyframes float{0%{transform:translateY(100vh) translateX(0);}100%{transform:translateY(-10vh) translateX(50px);}}
 
 /* LOGO Y MENU */
-header .logo{font-size:3rem; color:var(--primary); text-shadow:2px 2px 15px rgba(0,0,0,0.5);}
+header .logo{font-size:3rem; color:var(--primary); text-shadow:2px 2px 15px rgba(0,0,0,0.4); font-family:'Playfair Display', serif;}
 header .logo span{color:var(--secondary);}
-nav.main-nav{margin-top:20px; display:flex; gap:20px; flex-wrap:wrap; justify-content:center; z-index:10;}
-nav.main-nav a{padding:10px 15px; font-weight:700; border-radius:10px; transition:0.3s; color:var(--light);}
+nav.main-nav{margin-top:20px; display:flex; gap:15px; flex-wrap:wrap; justify-content:center; z-index:10;}
+nav.main-nav a{padding:10px 15px; font-weight:600; border-radius:10px; transition:0.3s; color:var(--light);}
 nav.main-nav a:hover{background:var(--secondary); color:var(--primary);}
 
 /* SALA 3D + CORTINA */
@@ -48,21 +48,21 @@ nav.main-nav a:hover{background:var(--secondary); color:var(--primary);}
 .cortina.open{transform:translateX(0);}
 
 /* SECCIONES CORTINAS */
-.cortinas-section{display:grid; grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:50px; align-items:center;}
-.cortinas-section h2{font-size:2.5rem; color:var(--primary); margin-bottom:20px;}
-.cortinas-section p{font-size:1.1rem; line-height:1.6; margin-bottom:20px;}
-.cta-buttons a{margin-right:20px; background:var(--secondary); color:var(--primary); padding:12px 25px; border-radius:12px; font-weight:700; transition:transform 0.3s;}
+.cortinas-section{display:grid; grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:50px; align-items:center; margin-bottom:50px;}
+.cortinas-section h2{font-size:2.5rem; color:var(--primary); margin-bottom:20px; font-family:'Playfair Display', serif;}
+.cortinas-section p{font-size:1.1rem; line-height:1.8; margin-bottom:20px; color:#333;}
+.cta-buttons a{margin-right:20px; background:var(--secondary); color:var(--primary); padding:12px 25px; border-radius:12px; font-weight:600; transition:transform 0.3s;}
 .cta-buttons a:hover{transform:scale(1.05);}
 .cortinas-image img{width:100%; height:100%; object-fit:cover; border-radius:20px; transition:transform 0.5s;}
 .cortinas-image img:hover{transform:scale(1.05);}
 
 /* TECH / AI */
 .tech-section{background:var(--light); text-align:center; padding:80px 10%;}
-.tech-section h2{font-size:2.5rem; color:var(--primary); margin-bottom:30px;}
+.tech-section h2{font-size:2.5rem; color:var(--primary); margin-bottom:30px; font-family:'Playfair Display', serif;}
 .tech-grid{display:flex; justify-content:center; gap:50px; flex-wrap:wrap;}
 .tech-item{flex:1 1 250px; background:#fff; border-radius:15px; padding:30px; box-shadow:0 10px 30px rgba(0,0,0,0.1); transition:transform 0.3s;}
 .tech-item:hover{transform:translateY(-10px);}
-.tech-item i{font-size:2.5rem; color:var(--secondary); margin-bottom:15px;}
+.tech-item i{font-size:2.5rem; color:var(--accent); margin-bottom:15px;}
 .tech-item h3{margin-bottom:15px; color:var(--primary);}
 .tech-item p{font-size:1rem; line-height:1.5;}
 
@@ -146,28 +146,9 @@ footer .socials a{margin-right:15px; font-size:1.5rem;}
   </div>
 </section>
 
-<!-- Tergal -->
-<section class="cortinas-section">
-  <div class="cortinas-text">
-    <h2>VELOS Y TERGALES</h2>
-    <p>Decore con estilo minimalista. Fácil limpieza y automatización opcional.</p>
-    <div class="cta-buttons">
-      <a href="#">Ver texturas</a>
-      <a href="#">Solicite su visita gratuita</a>
-    </div>
-    <ul>
-      <li><i class="fas fa-ruler-combined"></i> Medidas personalizadas</li>
-      <li><i class="fas fa-tv"></i> Automatización opcional</li>
-    </ul>
-  </div>
-  <div class="cortinas-image">
-    <img src="https://images.unsplash.com/photo-1598928506312-0c1f00b65b96?auto=format&fit=crop&w=800&q=80" alt="Tergal">
-  </div>
-</section>
-
-<!-- AUTOMATIZACIÓN / AI -->
+<!-- AI / AUTOMATIZACIÓN -->
 <section class="tech-section">
-  <h2>AUTOMATIZACIÓN DE CORTINAS Y PERSIANAS GERMAN RAMIREZ CORTINAS</h2>
+  <h2>AUTOMATIZACIÓN DE CORTINAS Y PERSIANAS</h2>
   <p>Controle cortinas, persianas, arrollables y toldos con un clic o comandos de voz. Compatible con Google Home y Alexa.</p>
   <div class="tech-grid">
     <div class="tech-item"><i class="fas fa-mobile-alt"></i><h3>Aplicación móvil</h3><p>Controle desde su celular sin esfuerzo.</p></div>
