@@ -5,14 +5,13 @@ body{font-family:'Montserrat',sans-serif;background:var(--color-fondo);color:var
 a{text-decoration:none;color:inherit}
 section{padding:80px 10%;}
 
-/* VARIABLES DE COLORES ESTILO APPLE */
 :root {
-    --color-fondo: #F5F5F7;        /* Un blanco roto suave */
-    --color-texto: #1D1D1F;        /* Gris oscuro casi negro */
-    --color-acento: #007AFF;       /* Azul brillante de Apple */
-    --color-acento-hover: #005bb5; /* Azul más oscuro para hover */
-    --color-gris-claro: #EFEFEF;    /* Ideal para bordes o fondos de secciones */
-    --color-gris-medio: #C8C8C8;    /* Para texto secundario o iconos */
+    --color-fondo: #F5EFE8;       /* Fondo claro estilo museográfico */
+    --color-texto: #3B2F2F;       /* Marrón oscuro elegante */
+    --color-acento: #8B5E3C;      /* Chocolate intenso */
+    --color-acento-hover: #5C3A21;/* Chocolate oscuro hover */
+    --color-gris-claro: #E2D9D0;  /* Para fondos de secciones */
+    --color-gris-medio: #C1B7AD;  /* Texto secundario */
     --color-negro-puro: #000000;
 }
 
