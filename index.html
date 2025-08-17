@@ -1,160 +1,303 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>German Ramirez Cortinas - Canet Costa Rica 2025</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<style>
-*{margin:0; padding:0; box-sizing:border-box;}
-body{font-family:'Playfair Display', serif; background:#f5f0eb; color:#222; overflow-x:hidden; perspective:1500px;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Ramirez Cortinas | Elegancia, Diseño y Tecnología</title>
+    <meta name="description" content="German Ramirez Cortinas en Costa Rica. Fabricación, reparación, mantenimiento y automatización de cortinas de lujo. Tecnología y diseño al estilo Hunter Douglas.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* Paleta de colores de tendencia 2025 */
+        :root {
+            --color-mocha-mousse: #a87d6e;
+            --color-butter-yellow: #f5e6a9;
+            --color-aqua-green: #9ed2c6;
+            --color-soft-pink: #f4c2c2;
+            --color-burnt-orange: #e76f51;
+            --color-silver: #c0c0c0;
+            --color-lime-green: #d1f737;
+            --color-ice-blue: #a3e2ff;
+            --color-chocolate: #4a2c2a;
+            --color-royal-purple: #7a3e60;
 
-/* Botones flotantes */
-.floating-btn{position:fixed; bottom:20px; right:20px; z-index:1000; border-radius:50%; width:60px; height:60px; display:flex; justify-content:center; align-items:center; font-size:1.5rem; color:#fff; cursor:pointer; box-shadow:0 5px 15px rgba(0,0,0,0.3);}
-.floating-whatsapp{background:#25d366; right:90px;}
-.floating-call{background:#ff4b5c;}
+            /* Colores base para la marca German Ramirez Cortinas */
+            --color-primary: var(--color-mocha-mousse);
+            --color-secondary: var(--color-silver);
+            --color-accent: var(--color-burnt-orange);
+            --color-text-dark: var(--color-chocolate);
+            --color-text-light: #f8f8f8;
+            --color-background-light: #f5f0eb;
+        }
 
-/* Header */
-header{position:relative; width:100%; height:90px; background:#f5f0eb; display:flex; align-items:center; justify-content:space-between; padding:0 50px; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
-.nav-links{display:flex; gap:30px; font-weight:700;}
-.nav-links a{color:#5c3a21; text-decoration:none; transition:color 0.3s;}
-.nav-links a:hover{color:#f8e49e;}
-.social-icons{display:flex; gap:15px;}
-.social-icons a{color:#5c3a21; font-size:1.2rem; transition:color 0.3s;}
-.social-icons a:hover{color:#f8e49e;}
+        /* Estilos generales */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; background: var(--color-background-light); color: var(--color-text-dark); overflow-x: hidden; perspective: 1500px; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .section { padding: 6rem 0; }
+        .brand-name { font-size: 2.5rem; font-weight: 700; color: var(--color-text-light); letter-spacing: 2px; text-shadow: var(--shadow-subtle); text-decoration: none; }
 
-/* Hero */
-.hero{position:relative; width:100%; height:80vh; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#222;}
-.hero video{position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-2; filter:brightness(0.6);}
-.hero .hero-content{position:relative; color:#fff; text-align:center; max-width:900px; z-index:2;}
-.hero h1{font-size:3rem; margin-bottom:20px;}
-.hero p{font-size:1.2rem; margin-bottom:30px; line-height:1.5;}
-.hero .cta-buttons{display:flex; gap:20px; justify-content:center; flex-wrap:wrap;}
-.hero .cta-buttons a{background:#f8e49e; color:#5c3a21; padding:15px 30px; border-radius:10px; text-decoration:none; font-weight:700; transition:transform 0.3s;}
-.hero .cta-buttons a:hover{transform:scale(1.05);}
+        /* Botones y animaciones generales */
+        .btn { padding: 0.8rem 2.5rem; border: none; border-radius: 50px; font-weight: 500; text-decoration: none; transition: all 0.5s ease; cursor: pointer; }
+        .btn-primary { background-color: var(--color-primary); color: var(--color-text-light); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .btn-primary:hover { background-color: var(--color-chocolate); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); }
+        .btn-secondary { background-color: transparent; color: var(--color-text-light); border: 2px solid var(--color-text-light); }
+        .btn-secondary:hover { background-color: rgba(255, 255, 255, 0.1); color: var(--color-text-light); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
 
-/* Cortinas sección */
-.cortinas-section{padding:80px 10%; display:grid; grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:50px; align-items:center;}
-.cortinas-text h2{font-size:2.5rem; color:#5c3a21; margin-bottom:20px;}
-.cortinas-text p{font-size:1.1rem; line-height:1.6; margin-bottom:20px;}
-.cortinas-text .cta-buttons a{margin-right:20px;}
-.cortinas-image{position:relative; height:400px; border-radius:20px; overflow:hidden;}
-.cortinas-image img{width:100%; height:100%; object-fit:cover; transition:transform 1s;}
-.cortinas-image:hover img{transform:scale(1.05);}
+        /* HEADER: flotante y responsive */
+        .header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background-color: transparent; padding: 1.5rem 0; transition: background-color 0.3s ease-in-out; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; }
+        .header .nav ul { list-style: none; display: flex; gap: 2rem; }
+        .header .nav a { text-decoration: none; color: var(--color-text-light); font-weight: 500; font-size: 1.1rem; transition: color 0.3s ease; }
+        .header .nav a:hover { color: var(--color-primary); }
+        .header .social-icons { display: flex; gap: 1.5rem; }
+        .header .social-icons a { color: var(--color-text-light); font-size: 1.5rem; transition: color 0.3s ease; }
+        .header .social-icons a:hover { color: var(--color-primary); }
+        @media (max-width: 768px) {
+            .header .nav { display: none; }
+            .header-container { justify-content: center; }
+            .floating-btn { display: none; } /* Ocultar botones flotantes en móviles si se usa un menú fijo */
+        }
+        
+        /* BOTONES FLOTANTES */
+        .floating-btn{position:fixed; bottom:20px; right:20px; z-index:1000; border-radius:50%; width:60px; height:60px; display:flex; justify-content:center; align-items:center; font-size:1.5rem; color:#fff; cursor:pointer; box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+        .floating-whatsapp{background:#25d366; right:90px;}
+        .floating-call{background:#ff4b5c;}
 
-/* Tecnología */
-.tech-section{background:#f8f8f8; padding:80px 10%; text-align:center;}
-.tech-section h2{font-size:2.5rem; color:#5c3a21; margin-bottom:30px;}
-.tech-grid{display:flex; justify-content:center; gap:50px; flex-wrap:wrap;}
-.tech-item{flex:1 1 250px; background:#fff; border-radius:15px; padding:30px; box-shadow:0 10px 30px rgba(0,0,0,0.1); transition:transform 0.3s;}
-.tech-item:hover{transform:translateY(-10px);}
-.tech-item i{font-size:2.5rem; color:#f8e49e; margin-bottom:15px;}
-.tech-item h3{margin-bottom:15px; color:#5c3a21;}
-.tech-item p{font-size:1rem; line-height:1.5;}
+        /* HERO: video + contenido */
+        .hero-section { position: relative; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--color-text-light); overflow: hidden; }
+        .video-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .video-background video { width: 100%; height: 100%; object-fit: cover; }
+        .hero-content { position: relative; z-index: 10; max-width: 900px; opacity: 0; transform: translateY(20px); transition: opacity 1s ease-in-out 1s, transform 1s ease-in-out 1s; }
+        .hero-content.visible { opacity: 1; transform: translateY(0); }
+        .main-title { font-size: 5rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); color: var(--color-primary); }
+        .subtitle { font-size: 1.8rem; font-weight: 300; margin-bottom: 2.5rem; color: var(--color-silver); }
+        .cta-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+        
+        /* SECCIÓN DE CONTENIDO */
+        .cortinas-section { padding: 80px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; align-items: center; }
+        .cortinas-text h2 { font-size: 2.5rem; color: var(--color-text-dark); margin-bottom: 20px; }
+        .cortinas-text p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; }
+        .cortinas-image { position: relative; height: 400px; border-radius: 20px; overflow: hidden; }
+        .cortinas-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s; }
+        .cortinas-image:hover img { transform: scale(1.05); }
 
-/* Sala 3D + Cortina Blackout + AI Visual */
-.sala-container{position:relative; width:80%; max-width:1200px; height:450px; margin:50px auto; border-radius:20px; overflow:hidden; transform-style:preserve-3d; box-shadow:0 20px 50px rgba(0,0,0,0.2);}
-.sala-bg{position:absolute; width:100%; height:100%; background:url('https://images.unsplash.com/photo-1588854337111-3d9b1df7e214?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat; transition:transform 1s ease;}
-.cortina{position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(to right, #5c3a21 0%, #5c3a21 50%, transparent 50%); transform:translateX(-100%); z-index:2; transition:transform 2s ease; box-shadow: inset -5px 0 15px rgba(0,0,0,0.4);}
-.cortina.open{transform:translateX(0);}
-.cortina.closed{transform:translateX(-100%);}
+        /* SECCIÓN DE TECNOLOGÍA */
+        .tech-section { background: var(--color-background-light); padding: 80px 10%; text-align: center; }
+        .tech-section h2 { font-size: 2.5rem; color: var(--color-text-dark); margin-bottom: 30px; }
+        .tech-grid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; }
+        .tech-item { flex: 1 1 250px; background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s; opacity: 0; transform: translateY(50px); }
+        .tech-item:hover { transform: translateY(-10px); }
+        .tech-item.visible { opacity: 1; transform: translateY(0); }
+        .tech-item i { font-size: 2.5rem; color: var(--color-primary); margin-bottom: 15px; }
+        .tech-item h3 { margin-bottom: 15px; color: var(--color-text-dark); }
+        .tech-item p { font-size: 1rem; line-height: 1.5; }
 
-/* Panel AI visual dentro sala */
-.ai-panel-sala{position:absolute; top:20px; right:20px; width:120px; height:120px; background:rgba(248,228,158,0.2); border-radius:50%; display:flex; justify-content:center; align-items:center; box-shadow:0 0 30px rgba(248,228,158,0.5);}
-.ai-light{width:40px; height:40px; background:linear-gradient(45deg,#f8e49e,#5c3a21,#f8e49e); border-radius:50%; animation:none;}
-.ai-light.active{animation:pulse 1s infinite alternate;}
-@keyframes pulse{0%{opacity:0.3;}50%{opacity:1;}100%{opacity:0.3;}}
+        /* SALA 3D + CORTINA INTERACTIVA */
+        .sala-container { position: relative; width: 80%; max-width: 1200px; height: 60vh; margin: 50px auto; border-radius: 20px; overflow: hidden; transform-style: preserve-3d; box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+        .sala-bg { position: absolute; width: 100%; height: 100%; background: url('https://images.unsplash.com/photo-1588854337111-3d9b1df7e214?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat; transition: transform 1s ease; }
+        .cortina { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, var(--color-chocolate) 0%, var(--color-chocolate) 50%, transparent 50%); transform: translateX(-100%); z-index: 2; transition: transform 1.5s ease; box-shadow: inset -5px 0 15px rgba(0,0,0,0.4); }
+        .cortina.open { transform: translateX(0); }
+        .cortina.closed { transform: translateX(-100%); }
+        .ai-panel-sala { position: absolute; top: 20px; right: 20px; width: 120px; height: 120px; background: rgba(var(--color-butter-yellow), 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 30px rgba(var(--color-butter-yellow), 0.5); }
+        .ai-light { width: 40px; height: 40px; background: linear-gradient(45deg, var(--color-butter-yellow), var(--color-chocolate), var(--color-butter-yellow)); border-radius: 50%; animation: none; }
+        .ai-light.active { animation: pulse 1s infinite alternate; }
+        @keyframes pulse { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
 
-/* Footer */
-footer{text-align:center; padding:30px; background:#f5f0eb; color:#5c3a21;}
-</style>
+        /* FOOTER */
+        footer { text-align: center; padding: 30px; background: var(--color-background-light); color: var(--color-text-dark); }
+
+        @media (max-width: 768px) {
+            .floating-whatsapp { right: 20px; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- Botones flotantes -->
-<a href="https://wa.me/506XXXXXXXX" class="floating-btn floating-whatsapp"><i class="fab fa-whatsapp"></i></a>
-<a href="tel:+506XXXXXXXX" class="floating-btn floating-call"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/50664573846" class="floating-btn floating-whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+50622801050" class="floating-btn floating-call"><i class="fas fa-phone"></i></a>
 
-<!-- Header -->
-<header>
-  <nav class="nav-links">
-    <a href="#">TOLDO ZIPRO</a>
-    <a href="#">PERSIANAS</a>
-    <a href="#">CORTINAS</a>
-    <a href="#">EXTERIORES</a>
-    <a href="#">PÉRGOLAS ZEN</a>
-    <a href="#">TOLDOS</a>
-    <a href="#">ALFOMBRAS</a>
-    <a href="#">CONTACTO</a>
-  </nav>
-  <div class="social-icons">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-youtube"></i></a>
-  </div>
-</header>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="#inicio">
+                    <span class="brand-name">German Ramirez Cortinas</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#automatizacion">Automatización</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="https://wa.me/50664573846" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/persianascanetcr/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/persianas_canet/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </header>
 
-<!-- Hero -->
-<section class="hero">
-  <video autoplay muted loop>
-    <source src="video-de-fondo.mp4" type="video/mp4">
-  </video>
-  <div class="hero-content">
-    <h1>German Ramirez Cortinas</h1>
-    <p>Transforme su hogar u oficina con cortinas y persianas elegantes, automatizadas y de alta tecnología en Costa Rica.</p>
-    <div class="cta-buttons">
-      <a href="#">Agende su visita gratuita</a>
-      <a href="#">Solicite más información</a>
-    </div>
-  </div>
-</section>
+    <section id="inicio" class="hero-section">
+        <div class="video-background">
+            <video id="hero-video" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-curtain-in-a-room-3084-large.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <h1 class="main-title">German Ramirez Cortinas</h1>
+            <h2 class="subtitle">Elegancia, diseño y tecnología para tu hogar.</h2>
+            <div class="cta-buttons">
+                <a href="#contacto" class="btn btn-primary">Agende su visita gratuita</a>
+                <a href="#productos" class="btn btn-secondary">Explorar Colección</a>
+            </div>
+        </div>
+    </section>
 
-<!-- Sección Cortinas -->
-<section class="cortinas-section">
-  <div class="cortinas-text">
-    <h2>CORTINAS</h2>
-    <p>Reinventamos lo clásico: textiles premium que controlan la luz y protegen la privacidad, realzando la belleza de su hogar u oficina.</p>
-    <div class="cta-buttons">
-      <a href="#">Agende su visita gratuita</a>
-      <a href="#">Conozca nuestras opciones</a>
-    </div>
-  </div>
-  <div class="cortinas-image">
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Cortinas">
-  </div>
-</section>
+    <section id="productos" class="cortinas-section container">
+        <div class="cortinas-text animate-fade-in" style="animation-delay: 0.3s;">
+            <h2>CORTINAS</h2>
+            <p>Reinventamos lo clásico con textiles premium que controlan la luz y protegen la privacidad. Descubre la colección que realzará la belleza de tus espacios.</p>
+            <div class="cta-buttons">
+                <a href="#contacto" class="btn btn-primary">Agende su visita gratuita</a>
+            </div>
+        </div>
+        <div class="cortinas-image animate-fade-in" style="animation-delay: 0.5s;">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Cortinas de lujo">
+        </div>
+    </section>
 
-<!-- Sección Tecnología -->
-<section class="tech-section">
-  <h2>Automatización y Tecnología</h2>
-  <p>Controle cortinas, persianas y toldos con un clic o mediante sistemas inteligentes como Google Home y Alexa.</p>
-  <div class="tech-grid">
-    <div class="tech-item"><i class="fas fa-mobile-alt"></i><h3>Aplicación móvil</h3><p>Controle desde su celular sin esfuerzo.</p></div>
-    <div class="tech-item"><i class="fas fa-bolt"></i><h3>Sistemas inteligentes</h3><p>Compatibles con Google Home y Alexa.</p></div>
-    <div class="tech-item"><i class="fas fa-tv"></i><h3>Control remoto</h3><p>Opciones manuales para máxima comodidad.</p></div>
-  </div>
-</section>
+    <section id="automatizacion" class="tech-section">
+        <h2>Automatización y Tecnología</h2>
+        <p>Controle cortinas, persianas y toldos con un clic o mediante sistemas inteligentes como Google Home y Alexa.</p>
+        <div class="tech-grid container">
+            <div class="tech-item animate-fade-in" style="animation-delay: 0.2s;"><i class="fas fa-mobile-alt"></i><h3>Aplicación móvil</h3><p>Controle desde su celular sin esfuerzo.</p></div>
+            <div class="tech-item animate-fade-in" style="animation-delay: 0.4s;"><i class="fas fa-bolt"></i><h3>Sistemas inteligentes</h3><p>Compatibles con Google Home y Alexa.</p></div>
+            <div class="tech-item animate-fade-in" style="animation-delay: 0.6s;"><i class="fas fa-tv"></i><h3>Control remoto</h3><p>Opciones manuales para máxima comodidad.</p></div>
+        </div>
+    </section>
 
-<!-- Sala 3D + Cortina Blackout + AI Visual -->
-<section class="sala-container" id="sala">
-  <div class="sala-bg" id="sala-bg"></div>
-  <div class="cortina closed" id="cortina"></div>
-  <div class="ai-panel-sala"><div class="ai-light" id="ai-light"></div></div>
-</section>
+    <section class="sala-container" id="sala">
+        <div class="sala-bg" id="sala-bg"></div>
+        <div class="cortina closed" id="cortina"></div>
+        <div class="ai-panel-sala"><div class="ai-light" id="ai-light"></div></div>
+    </section>
 
-<footer>&copy; 2025 German Ramirez Cortinas | Todos los derechos reservados</footer>
+    <footer>
+        &copy; 2025 German Ramirez Cortinas | Todos los derechos reservados
+    </footer>
 
-<audio id="sound" src="cortina-bajar.mp3" preload="auto"></audio>
+    <audio id="sound" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto"></audio>
 
-<script>
-// Cortina 3D interactiva
-const cortina = document.getElementById('cortina');
-const sound = document.getElementById('sound');
-const sala = document.getElementById('sala-bg');
-const aiLight = document.getElementById('ai-light');
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Animación de partículas
+            const particlesContainer = document.getElementById('particles');
+            for(let i = 0; i < 70; i++) {
+                let p = document.createElement('div');
+                p.classList.add('particle');
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.animationDuration = (3 + Math.random() * 5) + 's';
+                particlesContainer.appendChild(p);
+            }
 
-document.addEventListener('mousemove', e => {
-  const x = (e.clientX/window.innerWidth - 0.5)*30;
-  const y = (e.clientY/window.innerHeight - 0.5)*20;
-  sala.style.transform = `rotateY(${x}deg) rotateX(${-y}deg) scale(1.
+            // Efecto 3D interactivo con el mouse
+            const salaBg = document.getElementById('sala-bg');
+            document.addEventListener('mousemove', e => {
+                const x = (e.clientX / window.innerWidth - 0.5) * 30;
+                const y = (e.clientY / window.innerHeight - 0.5) * 20;
+                salaBg.style.transform = `rotateY(${-x}deg) rotateX(${-y}deg) scale(1.05)`;
+            });
+
+            // Animación al hacer scroll
+            const elementsToAnimate = document.querySelectorAll('.animate-fade-in');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            elementsToAnimate.forEach(el => observer.observe(el));
+
+            // Funcionalidad de cortina y control por voz
+            const cortina = document.getElementById('cortina');
+            const aiLight = document.getElementById('ai-light');
+            const sound = document.getElementById('sound');
+            let isListening = false;
+
+            function controlCortina(action) {
+                if (action === 'open') {
+                    cortina.classList.remove('closed');
+                    cortina.classList.add('open');
+                    aiLight.classList.remove('active');
+                    alert("Cortina abierta ✅"); // Alerta visual para simular la acción
+                } else if (action === 'close') {
+                    cortina.classList.remove('open');
+                    cortina.classList.add('closed');
+                    aiLight.classList.remove('active');
+                    alert("Cortina cerrada ✅"); // Alerta visual
+                }
+                if (sound) {
+                    sound.currentTime = 0;
+                    sound.play().catch(e => console.error("Error al reproducir el sonido:", e));
+                }
+            }
+
+            // Web Speech API para control por voz
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                const recognition = new SpeechRecognition();
+                recognition.lang = 'es-ES';
+                recognition.continuous = false;
+                recognition.interimResults = false;
+
+                document.body.addEventListener('click', () => {
+                    if (!isListening) {
+                        isListening = true;
+                        aiLight.classList.add('active');
+                        alert("Escuchando comando de voz...");
+                        recognition.start();
+                    }
+                });
+
+                recognition.onresult = function(event) {
+                    const transcript = event.results[0][0].transcript.trim().toLowerCase();
+                    isListening = false;
+                    aiLight.classList.remove('active');
+                    console.log('Comando de voz detectado:', transcript);
+
+                    if (transcript.includes('abre la cortina')) {
+                        controlCortina('open');
+                    } else if (transcript.includes('cierra la cortina')) {
+                        controlCortina('close');
+                    } else {
+                        alert("Comando no reconocido. Toca la pantalla y di 'Alexa, abre/cierra la cortina'.");
+                    }
+                };
+
+                recognition.onerror = function(event) {
+                    isListening = false;
+                    aiLight.classList.remove('active');
+                    console.error('Error reconocimiento de voz:', event.error);
+                };
+            } else {
+                aiLight.style.display = 'none';
+                alert("Tu navegador no soporta control por voz.");
+            }
+        });
+    </script>
+</body>
+</html>
