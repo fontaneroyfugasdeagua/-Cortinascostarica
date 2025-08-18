@@ -5,7 +5,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--color-fondo);color:var
 a{text-decoration:none;color:inherit}
 section{padding:80px 10%;}
 :root {
-  --color-fondo: #520C8D; /* Fondo lavanda muy claro elegante */
+  --color-fondo: #2A2438; /* Fondo lavanda muy claro elegante */
   --color-texto: #2A2438; /* Morado grisáceo oscuro para texto */
   --color-acento: #6A0DAD; /* Morado elegante (púrpura intenso) */
   --color-acento-hover: #520C8D; /* Morado profundo para hover */
