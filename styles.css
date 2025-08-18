@@ -1,18 +1,19 @@
 /* RESET Y GENERAL */
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Montserrat',sans-serif;background:var(--color-fondo);color:var(--color-texto);overflow-x:hidden;line-height:1.6}
+body{font-family:'Montserrat',sans-serif;background:var(--color-gris-medio);color:var(--color-texto);overflow-x:hidden;line-height:1.6}
 a{text-decoration:none;color:inherit}
 section{padding:80px 10%;}
 :root {
-  --color-fondo: #A59BB2; /* Fondo lavanda muy claro elegante */
-  --color-texto: #2A2438; /* Morado grisáceo oscuro para texto */
-  --color-acento: #6A0DAD; /* Morado elegante (púrpura intenso) */
-  --color-acento-hover: #520C8D; /* Morado profundo para hover */
-  --color-gris-claro: #E6E1EC; /* Gris lavanda claro para secciones */
-  --color-gris-medio: #A59BB2; /* Gris púrpura para texto secundario */
-  --color-negro-puro: #000000; /* Negro para contraste máximo */
+  --color-fondo: #E6E1EC; /* Fondo lavanda muy claro elegante */
+  --color-texto: #2A2438; /* Morado grisáceo oscuro para texto */
+  --color-acento: #6A0DAD; /* Morado elegante (púrpura intenso) */
+  --color-acento-hover: #520C8D; /* Morado profundo para hover */
+  --color-gris-claro: #E6E1EC; /* Gris lavanda claro para secciones */
+  --color-gris-medio: #A59BB2; /* Gris púrpura para texto secundario */
+  --color-negro-puro: #000000; /* Negro para contraste máximo */
 }
+
 
 /* BOTONES FLOTANTES */
 .floating-btn{position:fixed;bottom:20px;z-index:1000;border-radius:50%;width:60px;height:60px;display:flex;justify-content:center;align-items:center;font-size:1.5rem;color:#fff;cursor:pointer;box-shadow:0 5px 15px rgba(0,0,0,0.3);transition:transform .3s}
