@@ -1,17 +1,39 @@
 /* RESET Y GENERAL */
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Montserrat',sans-serif;background:var(--color-fondo);color:var(--color-texto);overflow-x:hidden;line-height:1.6}
-a{text-decoration:none;color:inherit}
-section{padding:80px 10%;}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  padding: 80px 10%;
+}
+
 :root {
-  --color-fondo: #E6E1EC; /* Fondo lavanda muy claro elegante */
-  --color-texto: #2A2438; /* Morado grisáceo oscuro para texto */
-  --color-acento: #6A0DAD; /* Morado elegante (púrpura intenso) */
-  --color-acento-hover: #520C8D; /* Morado profundo para hover */
-  --color-gris-claro: #E6E1EC; /* Gris lavanda claro para secciones */
-  --color-gris-medio: #A59BB2; /* Gris púrpura para texto secundario */
-  --color-negro-puro: #000000; /* Negro para contraste máximo */
+  --color-fondo: #F0F0F5; /* Un fondo muy claro y neutro para alta legibilidad */
+  --color-texto: #1A1A1A; /* Un color negro profundo para el texto principal */
+  --color-acento: #007BFF; /* Un azul vibrante para el acento */
+  --color-acento-hover: #0056b3; /* Un azul más oscuro para el hover */
+  --color-gris-claro: #E9ECEF; /* Gris muy claro para secciones o elementos de fondo */
+  --color-gris-medio: #6C757D; /* Gris medio para texto secundario o bordes */
+  --color-negro-puro: #000000;
 }
 
 
