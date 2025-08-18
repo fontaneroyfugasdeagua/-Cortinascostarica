@@ -186,9 +186,9 @@ nav.main-nav {
   cursor: pointer;
   z-index: 1000;
   position: absolute;
-  right: 20px;
+  left: 50%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%); /* lo centra en X y Y */
 }
 
 .menu-toggle span {
