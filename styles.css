@@ -69,26 +69,6 @@ nav.main-nav a:hover{background:var(--color-gris-medio);color:#520C8D;transform:
   z-index: 1000;
 }
 
-.menu-toggle span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: var(--color-gris-claro);
-  transition: all 0.3s ease;
-}
-
-/* Transformaciones para la animación de la 'X' */
-.menu-toggle.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
 
 /* Estilos del menú para dispositivos móviles */
 @media (max-width: 768px) {
