@@ -52,11 +52,11 @@ images.forEach(img => {
 
 // Tu código JavaScript para el menú de hamburguesa aquí
   document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      menuToggle.classList.toggle('open');
-    });
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links'); // Usamos el nuevo ID
+  
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('open');
   });
+});
