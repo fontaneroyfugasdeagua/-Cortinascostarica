@@ -1,7 +1,7 @@
 /* RESET Y GENERAL */
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Montserrat',sans-serif;background:var(--color-acento-hover);color:var(--color-texto);overflow-x:hidden;line-height:1.6}
+body{font-family:'Montserrat',sans-serif;background:var(--color-fondo);color:var(--color-texto);overflow-x:hidden;line-height:1.6}
 a{text-decoration:none;color:inherit}
 section{padding:80px 10%;}
 :root {
@@ -13,6 +13,7 @@ section{padding:80px 10%;}
   --color-gris-medio: #A59BB2; /* Gris púrpura para texto secundario */
   --color-negro-puro: #000000; /* Negro para contraste máximo */
 }
+
 
 
 /* BOTONES FLOTANTES */
