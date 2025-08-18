@@ -27,12 +27,12 @@ section {
 }
 
 :root {
-  --color-fondo: #F0F0F5; /* Un fondo muy claro y neutro para alta legibilidad */
-  --color-texto: #1A1A1A; /* Un color negro profundo para el texto principal */
-  --color-acento: #007BFF; /* Un azul vibrante para el acento */
-  --color-acento-hover: #0056b3; /* Un azul más oscuro para el hover */
-  --color-gris-claro: #E9ECEF; /* Gris muy claro para secciones o elementos de fondo */
-  --color-gris-medio: #6C757D; /* Gris medio para texto secundario o bordes */
+  --color-fondo: #F0F0F5;
+  --color-texto: #1A1A1A;
+  --color-acento: #FF5733; /* Color vivo, por ejemplo un naranja brillante */
+  --color-acento-hover: #C70039; /* Un rojo oscuro para el hover */
+  --color-gris-claro: #E9ECEF;
+  --color-gris-medio: #6C757D;
   --color-negro-puro: #000000;
 }
 
