@@ -58,17 +58,6 @@ nav.main-nav a{padding:10px 15px;font-weight:600;border-radius:10px;transition:.
 nav.main-nav a:hover{background:var(--color-gris-medio);color:#520C8D;transform:translateY(-3px)}
 
 
-/* Estilos para el botón de hamburguesa */
-.menu-toggle {
-  display: none; /* Oculto por defecto en escritorio */
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 25px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
 
 /* Estilos del menú para dispositivos móviles */
 @media (max-width: 768px) {
